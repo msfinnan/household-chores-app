@@ -1,0 +1,32 @@
+{
+  "project_type": "Vite + React 18 + TypeScript SPA (greenfield, scaffolding from scratch)",
+  "language": "TypeScript",
+  "build_system": "Vite (must be manually scaffolded since npm registries are not accessible)",
+  "test_framework": "None yet - no testing infrastructure defined in the spec",
+  "build_command": "Cannot run - npm install not possible due to INTEGRATIONS_ONLY network mode. Once dependencies are installed: npm run build",
+  "test_command": "Cannot run - no test infrastructure yet and no node_modules",
+  "verification_instructions": "1. Verify all expected files exist with correct content. 2. Verify package.json has correct dependencies and scripts. 3. Verify TypeScript compiles (tsc --noEmit) against the created files where possible. 4. Verify index.html references /src/main.tsx correctly. Full verification (npm install && npm run dev) requires network access.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "When network is available: cd household-chores-app && npm install && npm run dev",
+  "environment_constraints": "INTEGRATIONS_ONLY network mode - cannot access npm registries, cannot run npm install, cannot pull Docker images. Node.js v22, npm 11.4.2, and TypeScript 5.9.3 are available globally. Must create all Vite scaffold files manually without using npm create vite@latest.",
+  "contribution_requirements": "Follow the spec in .kiro/specs/chores-app/tasks.md. Task 1 covers project scaffold and boilerplate cleanup.",
+  "key_patterns": "Standard Vite + React + TypeScript template structure. App.tsx should be minimal (not default Vite counter demo). Clean CSS files. Standard tsconfig setup with composite project references (tsconfig.json, tsconfig.app.json, tsconfig.node.json).",
+  "relevant_files": [
+    ".kiro/specs/chores-app/tasks.md",
+    ".kiro/specs/chores-app/design.md",
+    ".kiro/specs/chores-app/requirements.md",
+    "README.md",
+    "package.json (to create)",
+    "vite.config.ts (to create)",
+    "tsconfig.json (to create)",
+    "tsconfig.app.json (to create)",
+    "tsconfig.node.json (to create)",
+    "index.html (to create)",
+    "src/main.tsx (to create)",
+    "src/App.tsx (to create)",
+    "src/App.css (to create)",
+    "src/index.css (to create)",
+    "src/vite-env.d.ts (to create)"
+  ],
+  "directory_structure": "Currently: README.md and .kiro/specs/chores-app/ (requirements.md, design.md, tasks.md). Target structure after scaffold: standard Vite React-TS template with package.json, index.html, vite.config.ts, tsconfig files, and src/ with minimal App.tsx, main.tsx, CSS, and vite-env.d.ts."
+}

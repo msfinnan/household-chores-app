@@ -1,0 +1,7 @@
+{
+  "task_id": "task-project-scaffold",
+  "task_description": "Set up the Vite + React + TypeScript project scaffold for the household chores app (Task 1 from the spec). Create all template files manually since npm registries are not accessible. Clean out boilerplate so App.tsx is minimal and ready for development. Dev server cannot be verified without node_modules but file structure should be complete and correct.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001"],
+  "blocked_reason": null
+}

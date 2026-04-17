@@ -1,0 +1,39 @@
+{
+  "id": "FEAT-001",
+  "type": "chore",
+  "description": "Create the complete Vite + React + TypeScript project scaffold manually. Since npm registries are not accessible (INTEGRATIONS_ONLY network), all files that npm create vite@latest would generate must be created by hand. The App.tsx should be minimal and clean (not the default Vite counter demo with logos and state), ready for the household chores app to be built on top of it. CSS files should be minimal/empty. This covers Task 1 from .kiro/specs/chores-app/tasks.md.",
+  "status": "in_progress",
+  "steps": [
+    "Create package.json in the repo root with: name 'household-chores-app', private true, version '0.0.0', type 'module', scripts (dev: 'vite', build: 'tsc -b && vite build', lint: 'eslint .', preview: 'vite preview'), dependencies (react: '^18.3.1', react-dom: '^18.3.1'), devDependencies (@types/react: '^18.3.12', @types/react-dom: '^18.3.1', @vitejs/plugin-react: '^4.3.4', typescript: '~5.6.2', vite: '^6.0.5')",
+    "Create vite.config.ts in the repo root: import { defineConfig } from 'vite'; import react from '@vitejs/plugin-react'; export default defineConfig({ plugins: [react()] })",
+    "Create tsconfig.json with composite project references pointing to tsconfig.app.json and tsconfig.node.json",
+    "Create tsconfig.app.json targeting ES2020 with DOM/DOM.Iterable libs, module ESNext, moduleResolution bundler, jsx react-jsx, strict mode, include src/",
+    "Create tsconfig.node.json targeting ES2022 with module ESNext, moduleResolution bundler, include vite.config.ts",
+    "Create index.html in repo root: standard HTML5 document with <div id='root'></div> and <script type='module' src='/src/main.tsx'></script>",
+    "Create src/vite-env.d.ts with: /// <reference types='vite/client' />",
+    "Create src/main.tsx: import React, ReactDOM, App, and index.css; render <App /> into document.getElementById('root') using createRoot",
+    "Create src/App.tsx: minimal functional component that returns a simple <div> with a heading like 'Household Chores' - no logos, no counter, no default Vite boilerplate",
+    "Create src/App.css: empty or with a single minimal comment placeholder",
+    "Create src/index.css: minimal global reset styles (box-sizing border-box, margin 0, font-family sans-serif)",
+    "Verify all files exist using ls -R and confirm the structure matches the expected Vite React-TS template layout"
+  ],
+  "acceptance_criteria": [
+    "package.json exists with correct react, react-dom, typescript, vite, and @vitejs/plugin-react dependencies",
+    "vite.config.ts exists and imports defineConfig and react plugin correctly",
+    "tsconfig.json, tsconfig.app.json, tsconfig.node.json all exist with proper TypeScript configuration",
+    "index.html exists with root div and script module tag pointing to /src/main.tsx",
+    "src/main.tsx exists and renders App component into root element using createRoot",
+    "src/App.tsx exists with a minimal clean component (NOT the default Vite counter demo)",
+    "src/App.css and src/index.css exist (minimal/empty, no default Vite boilerplate styles)",
+    "src/vite-env.d.ts exists with vite/client reference",
+    "Running 'ls -R' from repo root shows the complete expected file structure"
+  ],
+  "verification": [
+    "Run 'ls -R /projects/sandbox/household-chores-app/src/' to confirm all src files exist",
+    "Run 'cat /projects/sandbox/household-chores-app/package.json | node -e \"const p=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')); console.log('react:', p.dependencies.react, 'vite:', p.devDependencies.vite)\"' to verify dependencies",
+    "Run 'cat /projects/sandbox/household-chores-app/src/App.tsx' and confirm it does NOT contain the default Vite counter/logo boilerplate",
+    "Run 'cat /projects/sandbox/household-chores-app/index.html' and confirm it references /src/main.tsx"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
