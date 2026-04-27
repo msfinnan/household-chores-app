@@ -1,0 +1,41 @@
+{
+  "id": "FEAT-001",
+  "type": "chore",
+  "description": "Create the Vite + React + TypeScript project scaffold manually by writing all necessary configuration and source files. Since INTEGRATIONS_ONLY network prevents npm install, all files are hand-written to match what 'npm create vite@latest chores-app -- --template react-ts' would generate, with boilerplate cleaned out (no default Vite demo content).",
+  "status": "in_progress",
+  "steps": [
+    "Create chores-app/package.json with React 18, TypeScript, Vite dependencies listed (react, react-dom, @types/react, @types/react-dom, typescript, vite, @vitejs/plugin-react). Use React 18.x versions (e.g., ^18.3.1 for react/react-dom, ^18.3.0 for @types/react, ^18.3.1 for @types/react-dom). Use Vite 6.x (^6.0.0), @vitejs/plugin-react ^4.3.0, TypeScript ~5.6.0. Include scripts: dev, build, lint, preview. Set name to 'chores-app', private true, version 0.0.0, type module.",
+    "Create chores-app/tsconfig.json - the root tsconfig that references tsconfig.app.json and tsconfig.node.json via 'references' field. Should have no compilerOptions of its own, just files:[] and references.",
+    "Create chores-app/tsconfig.app.json - the app-level TypeScript config targeting ES2020, with jsx:react-jsx, module:ESNext, moduleResolution:bundler, strict:true, noEmit:true. Include src/ directory.",
+    "Create chores-app/tsconfig.node.json - the node-level TypeScript config for vite.config.ts. Target ES2022, module:ESNext, moduleResolution:bundler. Include vite.config.ts.",
+    "Create chores-app/vite.config.ts importing @vitejs/plugin-react and exporting defineConfig with react() plugin.",
+    "Create chores-app/index.html - standard Vite entry HTML file with a div#root and a script tag pointing to /src/main.tsx.",
+    "Create chores-app/src/vite-env.d.ts with the Vite client types triple-slash reference (/// <reference types='vite/client' />).",
+    "Create chores-app/src/main.tsx - clean entry point that renders App component into the root div using ReactDOM.createRoot.",
+    "Create chores-app/src/App.tsx - minimal clean component that renders a heading 'Household Chores' (no default Vite logos, counters, or demo content).",
+    "Create chores-app/src/App.css - empty or minimal CSS file (no Vite default styles).",
+    "Create chores-app/src/index.css - basic CSS reset/base styles (box-sizing border-box, margin 0, font-family sans-serif).",
+    "Create a .gitignore inside chores-app/ with standard entries: node_modules, dist, *.local, .env files.",
+    "Verify all files exist and have correct structure by listing the directory tree."
+  ],
+  "acceptance_criteria": [
+    "chores-app/ directory exists under the repo root with all scaffold files",
+    "package.json contains correct React 18, Vite, TypeScript dependencies and scripts",
+    "tsconfig.json, tsconfig.app.json, and tsconfig.node.json are properly configured with references pattern",
+    "vite.config.ts imports and uses the React plugin",
+    "index.html has div#root and script module pointing to /src/main.tsx",
+    "src/main.tsx renders App into root using createRoot",
+    "src/App.tsx is a clean component with no Vite boilerplate (no logos, counters, or demo content)",
+    "src/App.css and src/index.css exist with no Vite default demo styles",
+    "src/vite-env.d.ts has the Vite client types reference",
+    ".gitignore covers node_modules, dist, and local env files"
+  ],
+  "verification": [
+    "Run 'find chores-app -type f | sort' to confirm all expected files exist",
+    "Run 'cat chores-app/package.json | node -e \"const p=require('fs').readFileSync('/dev/stdin','utf8'); const j=JSON.parse(p); console.log(j.dependencies.react, j.devDependencies.vite, j.scripts.dev)\"' to verify package.json structure",
+    "Run 'node -e \"JSON.parse(require('fs').readFileSync('chores-app/tsconfig.json','utf8'))\"' to verify tsconfig.json is valid JSON",
+    "Verify App.tsx does not contain 'useState' or 'logo' (no Vite boilerplate) via grep"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

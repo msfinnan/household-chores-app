@@ -1,0 +1,7 @@
+{
+  "task_id": "task-project-scaffold",
+  "task_description": "Create the Vite + React + TypeScript project scaffold for the household chores app. Since network is INTEGRATIONS_ONLY, all files are written manually instead of using npm create or npm install. The scaffold should be clean (no Vite demo boilerplate) and ready for subsequent development tasks.",
+  "status": "in_progress",
+  "feature_order": ["FEAT-001"],
+  "blocked_reason": null
+}

@@ -1,0 +1,31 @@
+{
+  "project_type": "React 18 + TypeScript SPA with Vite build tool",
+  "language": "TypeScript",
+  "build_system": "Vite - CANNOT install npm packages due to INTEGRATIONS_ONLY network mode. All scaffold files must be hand-written.",
+  "test_framework": "None configured yet (scaffold task only)",
+  "build_command": "Cannot run - no node_modules available (INTEGRATIONS_ONLY network)",
+  "test_command": "Cannot run - no test framework configured yet",
+  "verification_instructions": "1. Verify all scaffold files exist with correct content. 2. Run 'npx tsc --noEmit' using global TypeScript to check type validity of .ts/.tsx files (limited - no React types available). 3. Verify file structure matches design spec.",
+  "snapshot_or_generated_files": null,
+  "setup_instructions": "Normally: npm install. In this environment: files are written manually since npm registry is not accessible.",
+  "environment_constraints": "INTEGRATIONS_ONLY network - no external network access. Cannot run npm install, npm create, or download packages. Node.js v22.22.0, npm 11.4.2, and TypeScript 5.9.3 are available globally. React, Vite, and other dependencies are NOT available locally. Scaffold must be created by writing files manually.",
+  "contribution_requirements": "Follow project structure from .kiro/specs/chores-app/design.md. Use React 18 + TypeScript, Vite, CSS Modules or plain CSS.",
+  "key_patterns": "Project structure defined in design.md. Types defined in design.md (User, Chore, RecurrenceRule, RecurrenceType, AppState). StorageService interface pattern. React Context + useReducer for state.",
+  "relevant_files": [
+    ".kiro/specs/chores-app/design.md",
+    ".kiro/specs/chores-app/tasks.md",
+    ".kiro/specs/chores-app/requirements.md",
+    "chores-app/package.json",
+    "chores-app/tsconfig.json",
+    "chores-app/tsconfig.app.json",
+    "chores-app/tsconfig.node.json",
+    "chores-app/vite.config.ts",
+    "chores-app/index.html",
+    "chores-app/src/main.tsx",
+    "chores-app/src/App.tsx",
+    "chores-app/src/App.css",
+    "chores-app/src/index.css",
+    "chores-app/src/vite-env.d.ts"
+  ],
+  "directory_structure": "Repo root: /projects/sandbox/household-chores-app. Scaffold creates chores-app/ subdirectory containing the Vite project. The src/ directory will contain the application code organized into types/, storage/, state/, utils/, and components/ subdirectories."
+}
