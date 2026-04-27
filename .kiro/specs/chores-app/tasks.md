@@ -11,8 +11,8 @@ Set up the Vite + React + TypeScript project.
 ## Task 2: Core Types
 Create shared TypeScript types used across the app.
 
-- [ ] Create `src/types/index.ts`
-- [ ] Define `User`, `Chore`, `RecurrenceRule`, `RecurrenceType`, `AppState`
+- [x] Create `src/types/index.ts`
+- [x] Define `User`, `Chore`, `RecurrenceRule`, `RecurrenceType`, `AppState`
 
 ## Task 3: Storage Layer
 Implement the storage abstraction.
