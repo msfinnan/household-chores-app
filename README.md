@@ -10,6 +10,58 @@ A household chores management web app built with React + TypeScript.
 - Overdue highlighting
 - localStorage persistence behind a swappable StorageService abstraction
 
+## Getting Started
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (LTS recommended) and npm
+
+### Install
+```bash
+npm install
+```
+
+### Development
+Start the Vite dev server with hot module replacement:
+```bash
+npm run dev
+```
+
+### Build
+Type-check and produce a production build:
+```bash
+npm run build
+```
+
+### Preview
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+### Lint
+Run ESLint across the project:
+```bash
+npm run lint
+```
+
+## Project Structure
+```
+household-chores-app/
+├── index.html              # App entry HTML
+├── vite.config.ts          # Vite configuration
+├── eslint.config.js        # ESLint configuration
+├── tsconfig*.json          # TypeScript configuration
+├── public/                 # Static assets
+└── src/
+    ├── App.tsx             # Root application component
+    ├── main.tsx            # React entry point
+    ├── storage/
+    │   ├── StorageService.ts        # Storage abstraction interface
+    │   └── LocalStorageService.ts   # localStorage implementation
+    └── types/
+        └── index.ts        # Shared type definitions
+```
+
 ## Spec
 See `.kiro/specs/chores-app/` for requirements, design, and implementation tasks.
 
